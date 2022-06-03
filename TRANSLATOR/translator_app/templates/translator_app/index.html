@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form action="" class="w-100" method="POST">
+                {% csrf_token %}
+                <input name="word" type="text" placeholder="Hello world">
+
+<!--                <div>-->
+<!--                    <p>From lang</p>-->
+<!--                    <select name="from_lang" id="">-->
+<!--                        <option value="en">English</option>-->
+<!--                        <option value="ru">Русский</option>-->
+<!--                        <option value="ar">Arabic</option>-->
+<!--                        <option value="ja">Japanese</option>-->
+<!--                        <option value="tr">Turkish</option>-->
+<!--                        <option value="uz">Uzbek</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+                <div>
+                    <p>From lang</p>
+                    <select name="to_lang" id="">
+                        <option value="en">English</option>
+                        <option value="ru">Русский</option>
+                        <option value="ar">Arabic</option>
+                        <option value="ja">Japanese</option>
+                        <option value="tr">Turkish</option>
+                        <option value="uz">Uzbek</option>
+                    </select>
+                </div>
+
+                <button type="submit">Перевети</button>
+            </form>
+            {% if word %}
+            <strong>Перевод слова: {{ word }}</strong>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
